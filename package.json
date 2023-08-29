@@ -4,16 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "nodeman server.js",
+    "watch": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "nodeman": "^1.1.2"
+    "nodemon": "^2.0.7"
   }
 }
