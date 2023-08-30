@@ -22,8 +22,27 @@ app.use((req, res, next) => {
   console.log(`${req.method} ${req.url} ${delta}ms`);
 });
 
+app.use(express.json());
+
 app.get('/friends', (req, res) => {
   res.json(friends);
+});
+
+app.post('/friends', (req, res) => {
+  if (!req.body.name) {
+    req.status(400).json({
+      error: 'Missing friend Name',
+    });
+  }
+
+  const newFriend = {
+    name: req.body.name,
+    id: friends.length,
+  };
+
+  friends.push(newFriend);
+
+  res.json(newFriend);
 });
 
 app.get('/friends/:friendId', (req, res) => {
